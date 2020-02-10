@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -10,19 +11,27 @@ const Tab = createBottomTabNavigator()
 
 export default function RootNavigation() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        activeTintColor: 'blue',
+        inactiveTintColor: 'green',
+        labelStyle: {
+          fontWeight: 'bold'
+        }
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: () => <Ionicons name="md-home" size={32} />
+          tabBarIcon: ({ color }) => <Ionicons name="md-home" size={32} color={color} />,
         }}
       />
       <Tab.Screen
         name="Todos"
         component={Todos}
         options={{
-          tabBarIcon: () => <Ionicons name="md-list" size={32} />
+          tabBarIcon: ({ color }) => <Ionicons name="md-list" size={32} color={color} />
         }}
       />
     </Tab.Navigator>
