@@ -5,37 +5,22 @@ import TodoItem from './TodoItem'
 
 function TodoList({ todos }) {
   return (
-    <ScrollView>
-      <View>
-        <Text
-          style={{
-            fontWeight: 'bold',
-            fontSize: 20,
-          }}
-        >
-          Loyal Fox todos:
-      </Text>
-        <View
-          style={{
-            marginTop: 20
-          }}
-        >
-          {
-            todos.map((todo) => {
-              return (
-                <TodoItem todo={todo} />
-              )
-            })
-          }
-        </View>
-      </View>
-    </ScrollView>
+    <View style={styles.container}>
+      {
+        todos.map((todo) => {
+          return (
+            <TodoItem key={todo.id} todo={todo} />
+          )
+        })
+      }
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    backgroundColor: 'hsl(0, 0%, 80%)',
+    paddingBottom: 25
   },
 });
 

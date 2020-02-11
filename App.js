@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Constants from 'expo-constants';
+import { StyleSheet, View, StatusBar } from 'react-native';
 import { Provider } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -13,6 +12,7 @@ export default function App() {
     <NavigationContainer>
       <Provider store={store}>
         <View style={styles.container}>
+          <StatusBar barStyle="dark-content" />
           <RootNavigation />
         </View>
       </Provider>
@@ -24,6 +24,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: Constants.statusBarHeight
-  },
+  }
 });

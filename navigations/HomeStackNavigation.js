@@ -1,34 +1,21 @@
 import React from 'react'
-import { View, Button, StyleSheet, Text } from 'react-native'
+import { View, Button, StyleSheet } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 
+import Home from '../screens/Home'
 
-function StackScreen(props) {
-  return (
-    <View>
-      <Button title="Satu" onPress={() => { props.navigation.navigate('Satu') }} />
-      <Button title="Dua" onPress={() => { props.navigation.navigate('Dua') }} />
-      <Button title="Tiga" onPress={() => { props.navigation.navigate('Tiga') }} />
-      <Button title="Empat" onPress={() => { props.navigation.navigate('Empat') }} />
-      <Button title="Lima" onPress={() => { props.navigation.navigate('Lima') }} />
-    </View>
-  )
-}
 
 const Stack = createStackNavigator();
 
 
-function Home() {
+export default function HomeStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Satu"
-        component={StackScreen}
-      />
-      <Stack.Screen name="Dua" component={StackScreen} />
-      <Stack.Screen name="Tiga" component={StackScreen} />
-      <Stack.Screen name="Empat" component={StackScreen} />
-      <Stack.Screen name="Lima" component={StackScreen} />
+      <Stack.Screen name="Satu" component={Home} />
+      <Stack.Screen name="Dua" component={Home} />
+      <Stack.Screen name="Tiga" component={Home} />
+      <Stack.Screen name="Empat" component={Home} />
+      <Stack.Screen name="Lima" component={Home} />
     </Stack.Navigator>
   )
 }
@@ -43,4 +30,3 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Home

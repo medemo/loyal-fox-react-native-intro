@@ -1,5 +1,6 @@
 import {
   ADD_TODO,
+  UPDATE_TODO,
   RESET_TODOS,
   FETCH_TODOS_START,
   FETCH_TODOS_SUCCESS,
@@ -13,6 +14,26 @@ export const addTodo = (newTodo) => {
     todo: {
       id: uuid(),
       title: newTodo,
+      completed: false,
+    }
+  }
+}
+
+export const completeTodo = (id) => {
+  return {
+    type: UPDATE_TODO,
+    id,
+    data: {
+      completed: true,
+    }
+  }
+}
+
+export const uncompleteTodo = (id) => {
+  return {
+    type: UPDATE_TODO,
+    id,
+    data: {
       completed: false,
     }
   }

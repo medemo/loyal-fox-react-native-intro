@@ -22,9 +22,11 @@ export default function AddTodo(props) {
         style={{
           flex: 1,
           height: 40,
-          borderColor: 'black',
           borderWidth: 1,
           paddingHorizontal: 5,
+          borderRadius: 5,
+          borderColor: 'white',
+          backgroundColor: 'white'
         }}
         onChangeText={text => handleInputChange(text)}
         value={newTodo}
@@ -49,7 +51,10 @@ export default function AddTodo(props) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginHorizontal: 20,
-    marginVertical: 20
+    paddingHorizontal: 20,
+    width: '100%',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    height: 80,
   },
 });
